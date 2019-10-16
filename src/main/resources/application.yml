@@ -1,0 +1,15 @@
+server:
+  port: 8088
+# actuator是否需要安全保证配置
+management:
+  contextPath: /actuator
+  security:
+    enabled: true
+
+# actuator登录认证配置
+security:
+  basic:
+    path: /actuator/**
+  user:
+    name: admin${random.int}
+    password: ${random.value}
